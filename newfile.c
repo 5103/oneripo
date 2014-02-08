@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 
-typedef struct Item {
+typedef struct Item 
+{
 	char name[30];	/* 商品名	*/
 	int  same;		/* 商品数	*/
 	int price;		/* 価格		*/
@@ -10,7 +11,8 @@ typedef struct Item {
 }ITEM, *LPITEM ;
 Item a ={ };
 
-typedef struct Item2 {
+typedef struct Item2 
+{
 	int id;			/* 商品ID	*/
 	int  buy;		/* 売った数	*/
 	int price;		/* 価格		*/
@@ -18,7 +20,8 @@ typedef struct Item2 {
 }ITEM2, *IPITEM ;
 Item b ={ };
 
-typedef struct Item3 {
+typedef struct Item3 
+{
 	char torihikisaki[30];  /*取引先*/
 	int torihikisakiid;  /*取引先ID*/
 }ITEM3, *TPITEM ;
@@ -32,7 +35,8 @@ int main(void)
 	/* （２）構造体の宣言 */
 	/* （３）構造体の初期化 */
 
-	struct Item Item[] = {
+	struct Item Item[] = 
+	{
 		{ "ボール", 1000, 500 ,0 },
 		{ "バット",10 , 6000 ,1 },
 		{ "グローブ", 20, 30000 ,2},
@@ -45,7 +49,8 @@ int main(void)
 		{ "投球用的", 2, 5000 ,9},
 
 	};
-		struct Item2 Item2[] = {
+		struct Item2 Item2[] = 
+	{
 		{ 0,  500 ,0 ,500 },
 		{ 6,    1 ,1 ,1 },
 		{ 4,	3, 2 ,1000},
@@ -57,7 +62,8 @@ int main(void)
 
 
 	};
-		struct Item3 Item3[] = {
+		struct Item3 Item3[] = 
+	{
 		{ "チリ",0},
 		{ "赤地",1},
 		{ "篠塚",2},
@@ -69,7 +75,8 @@ int main(void)
 	
 	/* （４）構造体の参照 */
 
-	for(i = 0; i < 10; i++) {
+	for(i = 0; i < 10; i++) 
+	{
 		printf("%s %d %d\n",
 			Item[i].name, Item[i].same, Item[i].price);
 	}
@@ -77,20 +84,25 @@ int main(void)
 
 
 
-	for(i = 0; i < 7; i++) {
+	for(i = 0; i < 7; i++) 
+	{
 	
 		//printf("%d %d %d %d\n",
 		//	Item2[i].id, Item2[i].buy, Item2[i].price, Item2[i].torihikisakiid);
 			int index1 = -1;
 			int index3 = -1;
-			for(y=0; y<10; y++){
-				if( Item2[i].id == Item[y].id ){
+			for(y=0; y<10; y++)
+			{
+				if( Item2[i].id == Item[y].id )
+				{
 					index1 = y;
 					break;
 				}
 			}
-			for(x=0; x<4; x++){
-				if( Item2[i].torihikisakiid == Item3[x].torihikisakiid ){
+			for(x=0; x<4; x++)
+			{
+				if( Item2[i].torihikisakiid == Item3[x].torihikisakiid )
+				{
 					index3 = x;
 					break;
 				}
